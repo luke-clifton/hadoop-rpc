@@ -1,16 +1,10 @@
 { hadoop-rpc-src ? ./.
+, systems ? [builtins.currentSystem]
 }:
 
 let
   pkgs = import <nixpkgs> {};
   name = "hadoop-rpc";
-
-  # Systems to build for.
-  systems = [
-    "x86_64-linux"
-    "i686-linux"
-    "x86_64-darwin"
-  ];
 
   # Compilers to use.
   compilers = [
